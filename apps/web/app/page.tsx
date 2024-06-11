@@ -21,13 +21,13 @@ export default function Home() {
 
   useGSAP(
     () => {
-      const boxes = gsap.utils.toArray('.box');
+      const boxes = gsap.utils.toArray!<HTMLElement>('.box');
       tl.current = gsap
         .timeline()
-        .to(boxes[0], { x: 150, y: 80, rotation: 360 })
-        .to(boxes[1], { x: 50, y: -10, rotation: 360 })
-        .to(boxes[2], { x:-150,y: -100, rotation: -360 })
-        .to(boxes[3], { x:-50 ,y: -190, rotation: -360  })
+        .to(boxes[0]!, { x: 150, y: 80, rotation: 360 })
+        .to(boxes[1]!, { x: 50, y: -10, rotation: 360 })
+        .to(boxes[2]!, { x:-150,y: -100, rotation: -360 })
+        .to(boxes[3]!, { x:-50 ,y: -190, rotation: -360  })
         .reverse();
     },
     { scope: container }
@@ -35,7 +35,7 @@ export default function Home() {
 
   useGSAP(
     () => {
-        const circles = gsap.utils.toArray('.circle')
+        const circles = gsap.utils.toArray<HTMLElement>('.circle')
         circles.forEach((circle) => {
           gsap.to(circle, {
             x: -900,
@@ -61,7 +61,6 @@ export default function Home() {
         >
           Toggle Timeline
         </Button>
-          {/* <button onClick={toggleTimeline}>Toggle Timeline</button> */}
         <div className="box gradient-green-2">I</div>
         <div className="box gradient-blue">R</div>
         <div className="box gradient-red">Q</div>
