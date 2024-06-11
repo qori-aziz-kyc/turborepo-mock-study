@@ -19,3 +19,8 @@ body {
   background: var(--background);
   font-synthesis: none;
 }
+
+.heading2 {
+  text-align: center;
+  top: 0;
+}

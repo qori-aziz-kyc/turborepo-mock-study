@@ -9,6 +9,7 @@ export default function Home() {
   let canvas: HTMLElement
   useEffect(() => {
     if (canvas) return
+    canvas = document.getElementById('canvas')!
     const renderer = new THREE.WebGLRenderer({
       canvas: canvas || undefined,
       antialias: true,
@@ -51,7 +52,8 @@ export default function Home() {
 
   return (
     <>
-      <canvas id="canvas"></canvas>
+    <h2 className="heading2">Turborepo test site 2 : ThreeJS model</h2>
+    <canvas id="canvas"></canvas>
     </>
   );
 }
